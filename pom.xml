@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--工程基本信息-->
+    <description>父工程</description>
+    <name>zxtcw</name>
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!--spring boot 父工程-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.0.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <!-- 聚合工程的父工程 -->
+    <groupId>com.zxtcw</groupId>
+    <artifactId>zxtcw</artifactId>
+    <version>1.0.0</version>
+
+    <!-- 版本参数 -->
+    <properties>
+        <!--设置源码编码格式-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--设置编译后文件编码格式-->
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!--java版本-->
+        <java.version>1.8</java.version>
+        <!--全局配置项目版本号-->
+        <version>1.0.0</version>
+        <!--第三方依赖版本 spring boot-->
+        <boot-version>2.1.0.RELEASE</boot-version>
+        <!--第三方依赖版本-->
+    </properties>
+
+    <!--子模块声明-->
+    <packaging>pom</packaging>
+    <modules>
+        <module>zxtcw-launch</module>
+        <module>zxtcw-system</module>
+        <module>zxtcw-basedata</module>
+        <module>zxtcw-plan</module>
+        <module>zxtcw-exe</module>
+        <module>zxtcw-quality</module>
+        <module>zxtcw-storage</module>
+        <module>zxtcw-equipment</module>
+        <module>zxtcw-platform</module>
+    </modules>
+
+    <!--依赖声明-->
+    <!--Maven会沿着父子层次向上走，直到找到一个拥有dependencyManagement元素的项目，然后它就会使用在这个dependencyManagement元素中指定的版本号-->
+    <dependencyManagement>
+        <dependencies>
+            <!-- 子模块依赖(给子模块版本) -->
+            <dependency>
+                <groupId>com.zxtcw</groupId>
+                <artifactId>zxtcw-launch</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zxtcw</groupId>
+                <artifactId>zxtcw-system</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zxtcw</groupId>
+                <artifactId>zxtcw-basedata</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zxtcw</groupId>
+                <artifactId>zxtcw-plan</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zxtcw</groupId>
+                <artifactId>zxtcw-exe</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zxtcw</groupId>
+                <artifactId>zxtcw-quality</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zxtcw</groupId>
+                <artifactId>zxtcw-storage</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zxtcw</groupId>
+                <artifactId>zxtcw-equipment</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zxtcw</groupId>
+                <artifactId>zxtcw-platform</artifactId>
+                <version>${version}</version>
+            </dependency>
+
+            <!--第三方依赖spring boot 相关-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${boot-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>${boot-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${boot-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <version>${boot-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
+                <version>${boot-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.session</groupId>
+                <artifactId>spring-session-jdbc</artifactId>
+                <version>${boot-version}</version>
+            </dependency>
+
+            <!-- 第三方依赖(控制版本) -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.47</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.9</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.1.16</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>1.3.2</version>
+            </dependency>
+
+
+            <!--自定义starter-->
+            <dependency>
+                <groupId>com.zxtcw.starter</groupId>
+                <artifactId>core-spring-boot-starter</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zxtcw.starter</groupId>
+                <artifactId>security-spring-boot-starter</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zxtcw.starter</groupId>
+                <artifactId>storage-spring-boot-starter</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>

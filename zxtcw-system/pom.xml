@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--父工程-->
+    <parent>
+        <groupId>com.zxtcw</groupId>
+        <artifactId>zxtcw</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <!--本工程-->
+    <groupId>com.zxtcw</groupId>
+    <artifactId>zxtcw-system</artifactId>
+    <name>zxtcw-system</name>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!--第三方依赖spring boot 相关-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--自定义starter-->
+        <dependency>
+            <groupId>com.zxtcw.starter</groupId>
+            <artifactId>core-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.zxtcw.starter</groupId>
+            <artifactId>security-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.zxtcw.starter</groupId>
+            <artifactId>storage-spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
